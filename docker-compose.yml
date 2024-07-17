@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  app:
+    image: docker-vqode-hr-app
+    environment:
+      - MONGODB_CONNSTRING=mongodb://VQodeHRApp:VQode@mongodb
+    build: .
+    ports:
+      - 10006:10006
+    volumes:
+      - ./components:/app/components
+      - ./config:/app/config
+      - ./context:/app/context
+      - ./model:/app/model
+      - ./pages:/app/pages
+      - ./public:/app/public
+      - ./redux:/app/redux
+      - ./styles:/app/styles
+  mongodb:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=VQodeHRApp
+      - MONGO_INITDB_ROOT_PASSWORD=VQode

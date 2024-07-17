@@ -1,0 +1,1 @@
+{"buildTargets":[".PHONY","build-production","build-staging","start-production","start-staging","stop-production","stop-staging"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

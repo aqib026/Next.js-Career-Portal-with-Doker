@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  vqode-hr-app-staging:
+    build:
+      context: ../../
+      dockerfile: docker/staging/Dockerfile
+    image: vqode-hr-app-staging
+    environment:
+      - MONGODB_CONNSTRING=mongodb://VQodeHRApp:VQode@mongodb
+    ports:
+      - "10006:10006"
+  mongodb:
+    image: mongo:5.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=VQodeHRApp
+      - MONGO_INITDB_ROOT_PASSWORD=VQode
